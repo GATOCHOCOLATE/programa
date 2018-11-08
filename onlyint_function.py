@@ -1,9 +1,9 @@
 
 def onlyint(question, n_min, n_max):
 
-    number = 0
+    number = True
 
-    while number < n_min or number > n_max:
+    while number < n_min or number > n_max or number == True:
         while True:
             try:
                 number = int(input(question))
