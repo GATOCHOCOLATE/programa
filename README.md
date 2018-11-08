@@ -1,1 +1,1 @@
-# Este es el readme de mi repositorio en git hub
+# Este es el readme de mi repositorio en git hub para practicar python
