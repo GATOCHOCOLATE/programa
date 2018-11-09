@@ -20,7 +20,7 @@ elif decision != "SI" or "NO":
     print("Abre tu navegador y busca {}".format(problem))
     answere = input("¿Lo has solucionado? (Si/No): ").upper()
 
-while answere != ("SI" or "NO"):
+while answere != "SI" and answere != "NO":
     print("Lo siento nose que has dicho ¿Puedes repetirmelo?")
     answere = str(input("¿Lo has solucionado? (Si/No): ").upper())
 

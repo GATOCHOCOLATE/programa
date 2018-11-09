@@ -2,9 +2,9 @@ import random
 
 def onlyint(question, n_min, n_max):
 
-    number = True
+    number = 999999999
 
-    while number < n_min or number > n_max or number == True:
+    while number < n_min or number > n_max or number == 999999999:
         while True:
             try:
                 number = int(input(question))
@@ -32,26 +32,13 @@ while game_mode != "S" and game_mode != "M":
 
 if game_mode == "S":
 
+    print("Has escogido el modo Singleplayer")
+
     number_to_guess = random.randint(0, 10)
 
-    while attempts > 0:
-        user_number = int(input("El número es: "))
-        if user_number == number_to_guess:
-            attempts = 0
-            print("You Win")
-
-        elif user_number == "":
-            user_number = int(input("Introduce un número porfavor :"))
-
-        else:
-            attempts -= 1
-            print("Lo siento ese número no es, te quedan {} intentos".format(attempts))
-
-
-    if not user_number == number_to_guess:
-        print("You Lose")
-
 else:
+
+    print("Has escogido el modo Multiplayer")
 
     print("Ahora el jugador que adivina no puede ver la pantalla")
 
@@ -62,14 +49,15 @@ else:
 
     print("Es el turno del jugador que adivina")
 
-    while attempts > 0:
-        user_number = int(input("Numero: "))
-        if user_number == number_to_guess:
-            attempts = 0
-            print("You Win")
-        else:
-            attempts -= 1
-            print("Lo siento ese número no es, te quedan {} intentos".format(attempts))
+while attempts > 0:
+    user_number = onlyint("El número es: ", 0, 10)
 
-    if not user_number == number_to_guess:
-        print("You Lose")
+    if user_number == number_to_guess:
+        attempts = 0
+        print("You Win")
+    else:
+        attempts -= 1
+        print("Lo siento ese número no es, te quedan {} intentos".format(attempts))
+
+if not user_number == number_to_guess:
+    print("You Lose")
